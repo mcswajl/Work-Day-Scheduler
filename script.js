@@ -1,12 +1,12 @@
 // list of variables
-var appointText = "";
-var appointTime = "";
+var taskText = "";
+var taskTime = "";
 var currentDate;
 var currentTime;
 var currentContainer;
 var tempArray = [];
-var storedAppointments;
-var returnedAppointments;
+var storedTask;
+var returnedTask;
 
 // call function to display current date and time
 $(document).ready("load", function () {
@@ -16,12 +16,12 @@ $(document).ready("load", function () {
 
     // call function to store to local storage, run if/for/if
     function renderAppointments() {
-        storedAppointments = JSON.parse(localStorage.getItem("appointments"));
-        if (storedAppointments !== null) {
-            for (i = 0; i < storedAppointments.length; i++) {
-                returnedAppointments = storedAppointments[i];
-                details = returnedAppointments.details;
-                timeIndex = returnedAppointments.time;
+        storedTask = JSON.parse(localStorage.getItem("appointments"));
+        if (storedTask !== null) {
+            for (i = 0; i < storedTask.length; i++) {
+                returnedTask = storedTask[i];
+                details = returnedTask.details;
+                timeIndex = returnedTask.time;
                 timeIndex = timeIndex.replace(":00", '');
                 if (details !== null) {
                     $("#" + timeIndex).children('div').children('div').children('textarea').val(details);
@@ -53,20 +53,20 @@ $(document).ready("load", function () {
 
 // save button click function 
 $(document).on('click', '.saveBtn', function () {
-    appointText = $(this).parent('div').children('div').children('textarea').val();
-    appointTime = $(this).parent('div').parent().attr("id");
+    taskText = $(this).parent('div').children('div').children('textarea').val();
+    taskTime = $(this).parent('div').parent().attr("id");
     appointment = {
-        time: appointTime,
-        details: appointText
+        time: taskTime,
+        details: taskText
     }
     tempArray = JSON.parse(localStorage.getItem("appointments"));
     if (tempArray === null) {
-        localStorage.setItem('appointments', JSON.stringify([{ time: appointTime, details: appointText }]));
+        localStorage.setItem('appointments', JSON.stringify([{ time: taskTime, details: taskText }]));
     }
     else {
         tempArray.push(appointment);
         localStorage.setItem("appointments", JSON.stringify(tempArray));
 
     }
-    $(this).parent('div').children('div').children('textarea').replaceWith($('<textarea>' + appointText.addClass("textarea") + '</textarea>'));
+    $(this).parent('div').children('div').children('textarea').replaceWith($('<textarea>' + taskText.addClass("textarea") + '</textarea>'));
 })
