@@ -1,3 +1,4 @@
+// list of variables
 var appointText = "";
 var appointTime = "";
 var currentDate;
@@ -7,12 +8,13 @@ var tempArray = [];
 var storedAppointments;
 var returnedAppointments;
 
-
+// call function to display current date and time
 $(document).ready("load", function () {
     currentDate = moment().format("dddd MMM Do YYYY, h:mm:ss a");
     $("#date-time").append(currentDate);
     currentTime = moment().format("H");
 
+    // call function to store to local storage, run if/for/if
     function renderAppointments() {
         storedAppointments = JSON.parse(localStorage.getItem("appointments"));
         if (storedAppointments !== null) {
@@ -30,6 +32,7 @@ $(document).ready("load", function () {
 
     renderAppointments();
 
+// for loop watching for i to be greater than 23 and stop the loop
     for (i = 0; i <= 23; i++) {
         CurrentContainer = i;
         if (currentTime == i) {
@@ -48,8 +51,8 @@ $(document).ready("load", function () {
 })
 
 
-
-$(".saveBtn").click(function () {
+// save button click function 
+$(document).on('click', '.saveBtn', function () {
     appointText = $(this).parent('div').children('div').children('textarea').val();
     appointTime = $(this).parent('div').parent().attr("id");
     appointment = {
