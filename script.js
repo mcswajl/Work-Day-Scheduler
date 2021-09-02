@@ -9,10 +9,11 @@ var storedTask;
 var returnedTask;
 
 // call function to display current date and time
-$(document).ready("load", function () {
+$(document).ready(function () {
     currentDate = moment().format("dddd MMM Do YYYY, h:mm:ss a");
     $("#date-time").append(currentDate);
     currentTime = moment().format("H");
+    
 
     // call function to store to local storage, run if/for/if
     function renderAppointments() {
@@ -24,7 +25,8 @@ $(document).ready("load", function () {
                 timeIndex = returnedTask.time;
                 timeIndex = timeIndex.replace(":00", '');
                 if (details !== null) {
-                    $("#" + timeIndex).children('div').children('div').children('textarea').val(details);
+                    $("#" + timeIndex).timeblock('div')('textarea').val(details);
+                    console.log(details);
                 }
             }
         }
@@ -36,16 +38,16 @@ $(document).ready("load", function () {
     for (i = 0; i <= 23; i++) {
         CurrentContainer = i;
         if (currentTime == i) {
-            $('#' + CurrentContainer).addClass("present");
-            $('#' + CurrentContainer).children('div').children('div').children("textarea").addClass("present");
+            $('#' + CurrentContainer).addClass("past");
+            $('#' + CurrentContainer).timeblock('div')('textarea').addClass("past");
         }
         else if (currentTime > i) {
-            $('#' + CurrentContainer).addClass("past");
-            $('#' + CurrentContainer).children('div').children('div').children("textarea").addClass("past");
+            $('#' + CurrentContainer).addClass("present");
+            $('#' + CurrentContainer).timeblock('div')('textarea').addClass("present");
         }
         else {
             $('#' + CurrentContainer).addClass("future");
-            $('#' + CurrentContainer).children('div').children('div').children("textarea").addClass("future");
+            $('#' + CurrentContainer).timeblock('div')('textarea').addClass("future");
         }
     }
 })
@@ -53,7 +55,8 @@ $(document).ready("load", function () {
 
 // save button click function 
 $(document).on('click', '.saveBtn', function () {
-    taskText = $(this).parent('div').children('div').children('textarea').val();
+    taskText = ('textarea').val();
+    console.log();
     taskTime = $(this).parent('div').parent().attr("id");
     appointment = {
         time: taskTime,
@@ -61,12 +64,12 @@ $(document).on('click', '.saveBtn', function () {
     }
     tempArray = JSON.parse(localStorage.getItem("appointments"));
     if (tempArray === null) {
-        localStorage.setItem('appointments', JSON.stringify([{ time: taskTime, details: taskText }]));
+        localStorage.setItem("appointments", JSON.stringify([{ time: taskTime, details: taskText }]));
     }
     else {
         tempArray.push(appointment);
         localStorage.setItem("appointments", JSON.stringify(tempArray));
 
     }
-    $(this).parent('div').children('div').children('textarea').replaceWith($('<textarea>' + taskText.addClass("textarea") + '</textarea>'));
+    //$(this).parent('div').children('div').children('textarea').replaceWith($('<textarea>' + taskText.addClass("textarea") + '</textarea>'));
 })
