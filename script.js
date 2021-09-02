@@ -25,7 +25,7 @@ $(document).ready(function () {
                 timeIndex = returnedTask.time;
                 timeIndex = timeIndex.replace(":00", '');
                 if (details !== null) {
-                    $("#" + timeIndex).timeblock('div')('textarea').val(details);
+                    $("#" + timeIndex)'.timeblock'('div')('textarea').val(details);
                     console.log(details);
                 }
             }
@@ -39,15 +39,15 @@ $(document).ready(function () {
         CurrentContainer = i;
         if (currentTime == i) {
             $('#' + CurrentContainer).addClass("past");
-            $('#' + CurrentContainer).timeblock('div')('textarea').addClass("past");
+            $('#' + CurrentContainer)'.timeblock'('div')('textarea').addClass("past");
         }
         else if (currentTime > i) {
             $('#' + CurrentContainer).addClass("present");
-            $('#' + CurrentContainer).timeblock('div')('textarea').addClass("present");
+            $('#' + CurrentContainer)'.timeblock'('div')('textarea').addClass("present");
         }
         else {
             $('#' + CurrentContainer).addClass("future");
-            $('#' + CurrentContainer).timeblock('div')('textarea').addClass("future");
+            $('#' + CurrentContainer)'.timeblock'('div')('textarea').addClass("future");
         }
     }
 })
