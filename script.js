@@ -25,7 +25,7 @@ $(document).ready(function () {
                 timeIndex = returnedTask.time;
                 timeIndex = timeIndex.replace(":00", '');
                 if (details !== null) {
-                    $("#" + timeIndex)'.timeblock'('div')('textarea').val(details);
+                    $("#" + timeIndex).children('.description').val(details);
                     console.log(details);
                 }
             }
@@ -39,15 +39,15 @@ $(document).ready(function () {
         CurrentContainer = i;
         if (currentTime == i) {
             $('#' + CurrentContainer).addClass("past");
-            $('#' + CurrentContainer)'.timeblock'('div')('textarea').addClass("past");
+            $('#' + CurrentContainer).children('.description').addClass("past");
         }
         else if (currentTime > i) {
             $('#' + CurrentContainer).addClass("present");
-            $('#' + CurrentContainer)'.timeblock'('div')('textarea').addClass("present");
+            $('#' + CurrentContainer).children( 'description').addClass("present");
         }
         else {
             $('#' + CurrentContainer).addClass("future");
-            $('#' + CurrentContainer)'.timeblock'('div')('textarea').addClass("future");
+            $('#' + CurrentContainer).children( 'description').addClass("future");
         }
     }
 })
@@ -55,9 +55,9 @@ $(document).ready(function () {
 
 // save button click function 
 $(document).on('click', '.saveBtn', function () {
-    taskText = ('textarea').val();
+    taskText = $(this).parent().children('.description').val();
     console.log();
-    taskTime = $(this).parent('div').parent().attr("id");
+    taskTime = $(this).parent().parent('.hour').text();
     appointment = {
         time: taskTime,
         details: taskText
