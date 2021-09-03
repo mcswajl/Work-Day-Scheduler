@@ -47,17 +47,17 @@ textarea{
   border-bottom: 1px dashed #000000;
 }
 
-.past {
+.past textarea{
   background-color: #d3d3d3;
   color: white;
 }
 
-.present {
+.present textarea{
   background-color: #ff6961;
   color: white;
 }
 
-.future {
+.future textarea{
   background-color: #77dd77;
   color: white;
 }

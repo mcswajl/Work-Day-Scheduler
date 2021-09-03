@@ -1,4 +1,4 @@
-// list of variables
+// list of global variables, others are inside the functions
 var taskText = "";
 var taskTime = "";
 var currentDate;
@@ -15,24 +15,16 @@ $(document).ready(function () {
     currentTime = moment().format("H");
     
 
-    // call function to store to local storage, run if/for/if
-    function renderAppointments() {
-        storedTask = JSON.parse(localStorage.getItem("appointments"));
-        if (storedTask !== null) {
-            for (i = 0; i < storedTask.length; i++) {
-                returnedTask = storedTask[i];
-                details = returnedTask.details;
-                timeIndex = returnedTask.time;
-                timeIndex = timeIndex.replace(":00", '');
-                if (details !== null) {
-                    $("#" + timeIndex).children('.description').val(details);
-                    console.log(details);
-                }
-            }
-        }
-    }
-
-    renderAppointments();
+    $("#9").children(".description").val(localStorage.getItem("9:00"))
+    $("#10").children(".description").val(localStorage.getItem("10:00"))
+    $("#11").children(".description").val(localStorage.getItem("11:00"))
+    $("#12").children(".description").val(localStorage.getItem("12:00"))
+    $("#13").children(".description").val(localStorage.getItem("1:00"))
+    $("#14").children(".description").val(localStorage.getItem("2:00"))
+    $("#15").children(".description").val(localStorage.getItem("3:00"))
+    $("#16").children(".description").val(localStorage.getItem("4:00"))
+    $("#17").children(".description").val(localStorage.getItem("5:00"))
+ 
 
 // for loop watching for i to be greater than 23 and stop the loop
     for (i = 0; i <= 23; i++) {
@@ -57,19 +49,13 @@ $(document).ready(function () {
 $(document).on('click', '.saveBtn', function () {
     taskText = $(this).parent().children('.description').val();
     console.log();
-    taskTime = $(this).parent().parent('.hour').text();
-    appointment = {
+    taskTime = $(this).parent().children('.hour').text();
+var appointment = {
         time: taskTime,
         details: taskText
-    }
-    tempArray = JSON.parse(localStorage.getItem("appointments"));
-    if (tempArray === null) {
-        localStorage.setItem("appointments", JSON.stringify([{ time: taskTime, details: taskText }]));
-    }
-    else {
-        tempArray.push(appointment);
-        localStorage.setItem("appointments", JSON.stringify(tempArray));
-
-    }
-    //$(this).parent('div').children('div').children('textarea').replaceWith($('<textarea>' + taskText.addClass("textarea") + '</textarea>'));
+    };
+    
+    localStorage.setItem(taskItem, taskText);
+    
+    
 })
