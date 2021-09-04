@@ -4,9 +4,6 @@ var taskTime = "";
 var currentDate;
 var currentTime;
 var currentContainer;
-var tempArray = [];
-var storedTask;
-var returnedTask;
 
 // call function to display current date and time
 $(document).ready(function () {
@@ -14,7 +11,7 @@ $(document).ready(function () {
     $("#date-time").append(currentDate);
     currentTime = moment().format("H");
     
-
+    //cal each row id
     $("#9").children(".description").val(localStorage.getItem("9:00"))
     $("#10").children(".description").val(localStorage.getItem("10:00"))
     $("#11").children(".description").val(localStorage.getItem("11:00"))
@@ -54,8 +51,7 @@ var appointment = {
         time: taskTime,
         details: taskText
     };
-    
-    localStorage.setItem(taskItem, taskText);
-    
+  // write to local storage  
+    localStorage.setItem(taskTime, taskText);
     
 })
