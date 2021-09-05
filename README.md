@@ -1,18 +1,22 @@
 # 05 Third-Party APIs: Work Day Scheduler
 
-Create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
-
-The starter code uses the [Moment.js](https://momentjs.com/) library to work with date and time, but feel free to use a different JavaScript solution to handle this functionality since Moment.js is considered a "legacy" project. Learn more about these other solutions in the [Moment.js project status page.](https://momentjs.com/docs/#/-project-status/)
+I create a simple calendar application that allows the user to save events for each hour of the day. This app run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
 ## User Story
 
-```
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
+I was provided starter code that linked me to moments library to work with date and time. I ended up editing the html slightly to get my js code to function correctly. My biggest struggle in this challenge was storing my task in local storage so when I refreshed the browser my task would still show up and not be deleted. I still need to edit the col- (in the html) or the CSS to make this application mobile friendly.
 
-## Acceptance Criteria
+## Screenshot
+
+Screenshot of my website
+![Screenshot](./assets/images/screenshot.jpg)
+
+The URL of the deployed application is https://mcswajl.github.io/Timed-Quiz-Questions/
+
+The URL of the GitHub repository is https://github.com/mcswajl/Timed-Quiz-Questions
+
+
+## Below is the Acceptance Criteria that I was challenged with
 
 ```
 GIVEN I am using a daily planner to create a schedule
