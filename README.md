@@ -11,9 +11,9 @@ I was provided starter code that linked me to moments library to work with date 
 Screenshot of my website
 ![Screenshot](./assets/images/screenshot.jpg)
 
-The URL of the deployed application is https://mcswajl.github.io/Timed-Quiz-Questions/
+The URL of the deployed application is https://mcswajl.github.io/Work-Day-Scheduler/
 
-The URL of the GitHub repository is https://github.com/mcswajl/Timed-Quiz-Questions
+The URL of the GitHub repository is https://github.com/mcswajl/Work-Day-Scheduler
 
 
 ## Below is the Acceptance Criteria that I was challenged with
