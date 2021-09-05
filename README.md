@@ -9,7 +9,7 @@ I was provided starter code that linked me to moments library to work with date 
 ## Screenshot
 
 Screenshot of my website
-![Screenshot](./images/screenshot.jpg)
+![Screenshot](./Assets/screenshot.jpg)
 
 The URL of the deployed application is https://mcswajl.github.io/Work-Day-Scheduler/
 
