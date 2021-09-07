@@ -10,17 +10,17 @@ $(document).ready(function () {
     currentDate = moment().format("dddd MMM Do YYYY, h:mm:ss a");
     $("#date-time").append(currentDate);
     currentTime = moment().format("L");
-        
+
     //cal each row id
-    $("#9").children(".description").val(localStorage.getItem("9:00"))
+    $("#09").children(".description").val(localStorage.getItem("09:00"))
     $("#10").children(".description").val(localStorage.getItem("10:00"))
     $("#11").children(".description").val(localStorage.getItem("11:00"))
     $("#12").children(".description").val(localStorage.getItem("12:00"))
-    $("#13").children(".description").val(localStorage.getItem("1:00"))
-    $("#14").children(".description").val(localStorage.getItem("2:00"))
-    $("#15").children(".description").val(localStorage.getItem("3:00"))
-    $("#16").children(".description").val(localStorage.getItem("4:00"))
-    $("#17").children(".description").val(localStorage.getItem("5:00"))
+    $("#13").children(".description").val(localStorage.getItem("13:00"))
+    $("#14").children(".description").val(localStorage.getItem("14:00"))
+    $("#15").children(".description").val(localStorage.getItem("15:00"))
+    $("#16").children(".description").val(localStorage.getItem("16:00"))
+    $("#17").children(".description").val(localStorage.getItem("17:00"))
  
 
 // for loop watching for i to be greater than 23 and stop the loop
