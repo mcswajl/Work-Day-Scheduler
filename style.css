@@ -33,7 +33,6 @@ textarea{
 .time-block{
   text-align: center;
   border-radius: 15px;
- 
 }
 
 .row {
@@ -47,7 +46,6 @@ textarea{
   color: #000000;
   font-weight: bold;
   border-bottom: 1px dashed #000000;
-
 }
 
 .past textarea{
@@ -71,7 +69,6 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
-
 }
 
 .saveBtn i:hover {
