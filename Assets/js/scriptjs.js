@@ -9,7 +9,7 @@ var currentContainer;
 $(document).ready(function () {
     currentDate = moment().format("dddd MMM Do YYYY, h:mm:ss a");
     $("#date-time").append(currentDate);
-    currentTime = moment().format("LT");
+    currentTime = moment().hour();
 
     //cal each row id
     $("#9").children(".description").val(localStorage.getItem("9:00"))
@@ -26,6 +26,9 @@ $(document).ready(function () {
 // for loop watching for i to be greater than 23 and stop the loop
 for (i = 0; i <= 23; i++) {
     CurrentContainer = i;
+    console.log("currentTime" + currentTime)
+    console.log(i)
+
     if (currentTime == i) {
         $('#' + CurrentContainer).addClass("past");
         $('#' + CurrentContainer).children('.description').addClass("past");
