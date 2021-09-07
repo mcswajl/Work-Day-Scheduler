@@ -9,8 +9,8 @@ var currentContainer;
 $(document).ready(function () {
     currentDate = moment().format("dddd MMM Do YYYY, h:mm:ss a");
     $("#date-time").append(currentDate);
-    currentTime = moment().format("H");
-    
+    currentTime = moment().format("L");
+        
     //cal each row id
     $("#9").children(".description").val(localStorage.getItem("9:00"))
     $("#10").children(".description").val(localStorage.getItem("10:00"))
