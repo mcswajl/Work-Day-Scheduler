@@ -10,7 +10,6 @@ $(document).ready(function () {
     currentDate = moment().format("dddd MMM Do YYYY, h:mm:ss a");
     $("#date-time").append(currentDate);
 
-
     //cal each row id
     $("#9").children(".description").val(localStorage.getItem("09:00"))
     $("#10").children(".description").val(localStorage.getItem("10:00"))
