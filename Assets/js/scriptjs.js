@@ -29,11 +29,11 @@ for (i = 0; i <= 23; i++) {
     console.log("currentTime" + currentTime)
     console.log(i)
 
-    if (currentTime == i) {
+    if (currentTime > i) {
         $('#' + CurrentContainer).addClass("past");
         $('#' + CurrentContainer).children('.description').addClass("past");
     }
-    else if (currentTime > i) {
+    else if (currentTime == i) {
         $('#' + CurrentContainer).addClass("present");
         $('#' + CurrentContainer).children( 'description').addClass("present");
     }
